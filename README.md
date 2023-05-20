@@ -9,14 +9,16 @@ docker run --rm --interactive --tty \
 --volume $PWD:/app \
 composer install
 
-./vendor/bin/sail up
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
-./vendor/bin/sail artisan migrate
+sail up
 
-./vendor/bin/sail artisan db:seed
+sail artisan migrate
 
-./vendor/bin/sail npm install
+sail artisan db:seed
 
-./vendor/bin/sail artisan queue:work
+sail npm install
 
-./vendor/bin/sail npm run dev
+sail artisan queue:work
+
+sail npm run dev
