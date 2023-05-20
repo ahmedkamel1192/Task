@@ -95,7 +95,7 @@ export default function Dashboards() {
                                         onChange={(value) =>
                                             setData("user_id", value.id)
                                         }
-                                        placeholder="Select with min 3 character"
+                                        placeholder="Search with minimum 3 characters"
                                     />
 
                                     <span className="text-red-600">
@@ -114,7 +114,7 @@ export default function Dashboards() {
                                         onChange={(value) =>
                                             setData("admin_id", value.id)
                                         }
-                                        placeholder="Select with min 3 character"
+                                        placeholder="Search with minimum 2 characters"
                                     />
 
                                     <span className="text-red-600">

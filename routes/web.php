@@ -21,11 +21,11 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia; // We are going to use this class to render React components
 
 Route::get('/', function () {
-    return Inertia::render('CreateTask'); // This will get component Test.jsx from the resources/js/Pages/Test.jsx
+    return redirect(route('tasks.index'));
 });
 
-Route::resource('tasks', TaskController::class);
-Route::resource('users', UserController::class);
-Route::resource('admins', AdminController::class);
-Route::resource('statistics', StatisticsController::class);
+Route::resource('tasks', TaskController::class)->only(['index', 'create','store']);;
+Route::resource('users', UserController::class)->only(['index']);
+Route::resource('admins', AdminController::class)->only(['index']);
+Route::resource('statistics', StatisticsController::class)->only(['index']);
 
