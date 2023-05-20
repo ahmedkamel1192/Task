@@ -2,6 +2,7 @@ import React from 'react';
 // import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, useForm, Link } from '@inertiajs/react';
 import AsyncSelect from 'react-select/async';
+import Header from '../../Layouts/Header';
 
 export default function Dashboards() {
 
@@ -32,6 +33,8 @@ export default function Dashboards() {
     }
 
     return (
+        <Header>
+
         <div className="py-12">
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -134,5 +137,6 @@ export default function Dashboards() {
                 </div>
             </div>
         </div>
+        </Header>
     );
 }
