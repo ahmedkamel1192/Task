@@ -5,6 +5,8 @@ Technologies used :
 
  to start the app run this commands
 
+cp .env.example .env 
+
 docker run --rm --interactive --tty \
 --volume $PWD:/app \
 composer install
@@ -12,6 +14,8 @@ composer install
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
 sail up
+
+sail artisan key:generate
 
 sail artisan migrate
 
@@ -22,3 +26,5 @@ sail npm install
 sail artisan queue:work
 
 sail npm run dev
+
+Go to http://localhost:8088
