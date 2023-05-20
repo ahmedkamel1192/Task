@@ -5,9 +5,9 @@ Technologies used :
 
  to start the app run this commands
 
-  docker run --rm --interactive --tty \
-  --volume $PWD:/app \
-  composer install
+docker run --rm --interactive --tty \
+--volume $PWD:/app \
+composer install
 
 ./vendor/bin/sail up
 
