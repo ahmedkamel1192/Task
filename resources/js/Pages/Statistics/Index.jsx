@@ -37,7 +37,7 @@ export default function Index() {
                                                 className="px-6 py-4 border-t"
                                                 colSpan="4"
                                             >
-                                                No contacts found.
+                                                No Statistics found.
                                             </td>
                                         </tr>
                                     )}
