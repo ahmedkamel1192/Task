@@ -14,11 +14,15 @@ class UsersTableSeeder extends Seeder
      */
     public function run(): void
     {
+        $hasRecords = DB::table('users')->exists();
+
+        if ($hasRecords)
+            return;
+
         $count = 10000;
 
         $usersChunks = User::factory()->count($count)->make()->chunk(1000)->toArray();
-        foreach ($usersChunks as $chunk)
-        {
+        foreach ($usersChunks as $chunk) {
             DB::table('users')->insert($chunk);
         }
     }

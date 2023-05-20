@@ -3,13 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateTaskRequest;
-use App\Models\Admin;
 use App\Models\Task;
+use App\Services\TaskService;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class TaskController extends Controller
 {
+
+    public $service;
+
+    public function __construct(TaskService $service)
+    {
+        $this->service = $service;
+    }
     /**
      * Display a listing of the resource.
      */
@@ -32,7 +39,7 @@ class TaskController extends Controller
      */
     public function store(CreateTaskRequest $request)
     {
-        Task::Create($request->validated());
+        $this->service->store($request->validated());
         return redirect()->route('tasks.index');
     }
 

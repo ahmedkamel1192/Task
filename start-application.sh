@@ -12,7 +12,10 @@
 
 ./vendor/bin/sail npm install
 
-./vendor/bin/sail npm run dev
+./vendor/bin/sail artisan queue:work &
+
+./vendor/bin/sail npm run dev &
+
 
 
 
